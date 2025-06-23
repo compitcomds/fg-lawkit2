@@ -26,6 +26,7 @@
     "reactjs-popup": "^2.0.6",
     "sass": "^1.89.2",
     "slick-carousel": "^1.8.1",
+    "sonner": "^2.0.5",
     "swiper": "^11.0.2",
     "wow.js": "^1.2.2",
     "yet-another-react-lightbox": "^3.21.6"

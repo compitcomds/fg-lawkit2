@@ -71,7 +71,8 @@ export const Layout = ({
       {footer === 7 && <FooterTwo />}
       {footer === 8 && <FooterTwo />}
     </>
-  );};
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node,
@@ -81,4 +82,3 @@ Layout.propTypes = {
   breadcrumbTitle: PropTypes.string,
   breadcrumbSubtitle: PropTypes.string,
 };
-

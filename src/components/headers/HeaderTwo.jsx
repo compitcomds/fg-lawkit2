@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useMobilemenu } from "../../lib/hooks/useMobilemenu";
 import { useStickyHeader } from "../../lib/hooks/useStickyHeader";
@@ -41,13 +40,44 @@ export const HeaderTwo = () => {
                   <HeaderSearch />
                 </div>
                 <a href="https://www.instagram.com/fg_lawkit?igsh=MWxud3p3YW5qa21mMw==">
-                <button className="td_circle_btn td_center" type="button">                 
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>  
-                </button></a>
+                  <button className="td_circle_btn td_center" type="button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="black"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-instagram-icon lucide-instagram"
+                    >
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                  </button>
+                </a>
                 <a href="https://www.youtube.com/@fglawkit">
-                <button className="td_circle_btn td_center" type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube-icon lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-                </button></a>
+                  <button className="td_circle_btn td_center" type="button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="black"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-youtube-icon lucide-youtube"
+                    >
+                      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                      <path d="m10 15 5-3-5-3z" />
+                    </svg>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -97,14 +127,12 @@ export const HeaderTwo = () => {
                       </li>
                       <li>
                         <Link to="/courses">Courses & Mocks</Link>
-                        
                       </li>
                       {/* <li>
                         <Link to="/about">About</Link>
                       </li> */}
                       <li>
                         <Link to="/case-briefs">Case Briefs</Link>
-                        
                       </li>
                       <li className="menu-item-has-children">
                         <Link to="#">Pages</Link>
@@ -113,9 +141,10 @@ export const HeaderTwo = () => {
                             <Link to="/case-material">DU Casemat</Link>
                           </li>
                           <li>
-                            <Link to="/previous-year-questions">PYQ(Previous Year Question) Papers</Link>
+                            <Link to="/previous-year-questions">
+                              PYQ(Previous Year Question) Papers
+                            </Link>
                           </li>
-                          
                         </ul>
                       </li>
                       {/* <li className="menu-item-has-children">
@@ -141,9 +170,8 @@ export const HeaderTwo = () => {
                             <Link to="/join-us">Join Us</Link>
                           </li>
                           <li>
-                            <Link to="/internship-form">Intership</Link>
+                            <Link to="/internship-form">Internship</Link>
                           </li>
-                          
                         </ul>
                       </li>
                     </ul>

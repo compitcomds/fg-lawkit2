@@ -1,9 +1,47 @@
 import { Layout } from "../../layouts/Layout";
-// import { Link } from "react-router-dom";
-
 import loginImg from "../../assets/img/others/login.jpg";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
+import axios from "axios";
+import config from "../../lib/config";
 
 export const JoinUs = () => {
+  const formRef = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+    try {
+      setIsSubmitting(true);
+      const data = Object.fromEntries(new FormData(formRef.current));
+      for (const value of Object.values(data)) {
+        if (!value.trim()) throw new Error("All the fields are required.");
+      }
+
+      await axios.post(`${config.backendApiUrl}/api/query-forms`, {
+        data: {
+          name: data.name,
+          email: data.email,
+          description: data.description,
+          other_meta: { phone: data.phone, linkedin: data.linkedin },
+          group_id: "join-us",
+          tenent_id: config.tenentId,
+        },
+      });
+
+      toast.success("Successfully submitted the form");
+      formRef.current.reset();
+    } catch (error) {
+      toast.error(
+        error.message || "Error while submitting form. Please try again later.",
+        { richColors: true }
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <Layout breadcrumbTitle={"Join Us"} breadcrumbSubtitle={"Join Us"}>
       <section>
@@ -12,40 +50,53 @@ export const JoinUs = () => {
           <div className="row td_gap_y_40">
             <div className="col-lg-6">
               <div className="td_form_card td_style_1 td_radius_10 td_gray_bg_5">
-                <div className="td_form_card_in">
+                <form
+                  ref={formRef}
+                  onSubmit={onSubmit}
+                  className="td_form_card_in"
+                >
                   <h2 className="td_fs_36 td_mb_20">DM your proposal to us.</h2>
                   <hr />
                   <div className="td_height_30 td_height_lg_30" />
                   <input
                     type="text"
-                    id="fname"
+                    id="name"
+                    name="name"
                     className="td_form_field td_mb_30 td_medium td_white_bg"
                     placeholder="Full Name *"
+                    required
                   />
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="td_form_field td_mb_30 td_medium td_white_bg"
                     placeholder="Email *"
+                    required
                   />
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     className="td_form_field td_mb_30 td_medium td_white_bg"
                     placeholder="Phone Number*"
+                    required
                   />
                   <input
                     type="text"
                     id="linkedin"
+                    name="linkedin"
                     className="td_form_field td_mb_30 td_medium td_white_bg"
                     placeholder="LinkedIn *"
+                    required
                   />
                   <textarea
-                    type="comment"
-                    id="comment"
+                    id="description"
+                    name="description"
                     className="td_form_field td_mb_30 td_medium td_white_bg"
                     placeholder="Why Join Us*"
                     rows="4"
+                    required
                   />
                   {/* <div className="td_form_card_text_2 td_mb_50">
                     <div>
@@ -66,10 +117,11 @@ export const JoinUs = () => {
                   <div className="td_form_card_bottom td_mb_25">
                     <button
                       type="submit"
+                      disabled={isSubmitting}
                       className="td_btn td_style_1 td_radius_10 td_medium"
                     >
                       <span className="td_btn_in td_white_color td_accent_bg">
-                        <span>Submit</span>
+                        {isSubmitting ? "Submitting" : "Submit"}
                       </span>
                     </button>
                     {/* <p className="td_fs_20 mb-0 td_medium td_heading_color">
@@ -90,7 +142,7 @@ export const JoinUs = () => {
                   {/* <p className="td_form_card_text td_fs_20 td_medium td_heading_color mb-0">
                     Don&apos;t Have an Account? <Link to="/signup">Sign up</Link>
                   </p> */}
-                </div>
+                </form>
               </div>
             </div>
             <div className="col-lg-6">
