@@ -1,0 +1,254 @@
+.case-material-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* Default 1 column */
+    gap: 20px;
+}
+
+.subtitle{
+    background-color: #075985;
+    padding: 28px;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+.description {
+    font-size: 18px;
+    margin-top: 20px;
+    color: rgb(67, 63, 63);
+}
+/* Term Cards Styling */
+.term {
+    background-color: #e6f7ff;
+    /* Light blue for background */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.term h2 {
+    font-size: 25px;
+    color: #fcfcfc;
+    border-radius: 8px 8px 0 0;
+    background: #0ad7e6;
+    padding: 20px;
+    margin-bottom: 1px;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+.term ul {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.term ul li {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    /* Optional: Adds space so hover effect looks better */
+    border-radius: 4px;
+    /* Optional: For smoother edges on hover */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+.term ul li:hover {
+    background-color: #b3faff;
+}
+
+
+.term ul li svg {
+    font-size: 20px;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.term ul li svg:hover {
+    color: #f56708;
+}
+
+/* Compulsory and Optional Subject Styling */
+.compulsory, .optional {
+    margin-top: 20px;
+}
+
+.compulsory h3, .optional h3 {
+    padding: 0 10px;
+    font-size: 15px;
+    color: #b7c0c4;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+
+.compulsory ul, .optional ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.compulsory ul li, .optional ul li {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    /* Optional: Adds space so hover effect looks better */
+    border-radius: 4px;
+    /* Optional: For smoother edges on hover */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+.compulsory ul li:hover, .optional ul li:hover {
+background-color: #b3faff;
+}
+
+/* Grid Responsiveness */
+@media (min-width: 576px) {
+
+    /* sm: 1 card */
+    .case-material-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* md: 2 cards */
+    .case-material-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* lg: 3 cards */
+    .case-material-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+
+    /* 2xl: 4 cards */
+    .case-material-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Container holding both image and content */
+.case-material-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* Default: hide image on sm and md */
+.case-material-image {
+  display: none;
+}
+
+.case-material-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Content section */
+.case-material-content1 {
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Term box */
+.term1 {
+  background-color: #e6f7ff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.term1 h2 {
+  font-size: 25px;
+  color: #fcfcfc;
+  background: #0ad7e6;
+  padding: 20px;
+  margin-bottom: 1px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.term1 ul {
+  list-style-type: none;
+  padding: 10px 0;
+  flex-grow: 1;
+}
+
+.term1 ul li {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.term1 ul li:hover {
+  background-color: #b3faff;
+}
+
+.term1 ul li svg {
+  font-size: 20px;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.term1 ul li svg:hover {
+  color: #f56708;
+}
+/* Responsive: large screens and up (≥992px) */
+@media (min-width: 992px) {
+  .case-material-container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .case-material-image {
+    display: block;
+    width: 50%;
+    height: auto;
+  }
+
+  .case-material-content1 {
+    width: 50%;
+    height: auto;
+  }
+
+  .case-material-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media (min-width: 1440px) {
+  .case-material-container {
+    margin: 0 60px 0 0;
+
+  }
+}

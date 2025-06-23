@@ -1,0 +1,263 @@
+.alphabet-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default 1 column */
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid #00b5e2; /* Blue border */
+  border-radius: 8px 8px 0px 0px; 
+  background-color: #e1f7fd; /* Light blue background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out; /* For smooth hover effect */
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  border-radius: 8px 8px 0px 0px; /* Rounded corners for the top */
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #00b5e2;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+.card li {
+  
+  text-align: center;
+}
+
+
+
+/* Responsive Grid */
+@media (min-width: 640px) {
+  .alphabet-cards {
+    grid-template-columns: repeat(2, 1fr); /* For medium screens, 2 columns */
+  }
+}
+
+@media (min-width: 1024px) {
+  .alphabet-cards {
+    grid-template-columns: repeat(3, 1fr); /* For large screens, 3 columns */
+    gap: 24px; /* Increased gap for larger screens */
+  }
+}
+
+@media (min-width: 1440px) {
+  .alphabet-cards {
+    grid-template-columns: repeat(4, 1fr); /* For extra large screens, 4 columns */
+  }
+}
+
+/* Search Bar Styling */
+.search-bar-wrapper {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.case-search-input {
+  padding: 12px 20px;
+  width: 80%;
+  max-width: 100%;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  transition: 0.3s all ease-in-out;
+}
+
+.case-search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0px rgba(0, 123, 255, 0.2);
+}
+
+/* Card and Typography Styling */
+.case-card {  
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease-in-out;
+}
+
+.case-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.case-letter {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #343a40;
+}
+
+.case-category-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.case-category-list li {  
+  padding: 10px;  
+}
+.case-category-list li:hover {
+    background-color: rgb(181, 245, 245);
+    cursor: pointer;
+}
+
+.case-link {
+  text-decoration: none;
+  color: #000408;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.category-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.briefs-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.briefs-list li {
+  margin-bottom: 12px;
+}
+
+.brief-link {
+  font-size: 18px;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.brief-link:hover {
+  color: #0579f5;
+  
+}
+
+.no-briefs-message {
+  color: #888;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+
+/* list */
+
+
+
+/* Category Grouping (Alphabet) */
+.category-group {
+  margin-top: 30px;
+}
+
+.category-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 5px;
+}
+
+/* Indented List of Case Briefs */
+.briefs-list {
+  display: block;
+  padding: 10px;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: capitalize;
+  color: #000000;
+  text-decoration: none;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.category-item {
+  margin-bottom: 10px;
+  
+}
+
+.brief-link {
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #333;
+  text-decoration: none;
+  background-color: #f9f9f9;
+  
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.brief-link:hover {
+  background-color: #f2f2f2;
+  border-color: #bbb;
+}
+
+/* No Briefs Message */
+.no-briefs-message {
+  font-size: 18px;
+  font-weight: 600;
+  color: #888;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Breadcrumb and Title Styling */
+.td_section_heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.td_section_subtitle_up {
+  font-size: 20px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.td_accent_color {
+  color: #007bff;
+}
+
+.td_height_80,
+.td_height_lg_40,
+.td_height_20 {
+  height: 80px;
+  height: 40px;
+  height: 20px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  
+
+  .brief-link {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .td_section_heading_left p {
+    font-size: 18px;
+  }
+}
